@@ -11,6 +11,7 @@ import { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import * as actions from '../../redux/actions.js';
+import { createGlobalStyle } from 'styled-components';
 
 //Styling for the whole header
 const MainDiv = styled.div`
@@ -28,24 +29,9 @@ const TitleText = styled.p`
   font-size: 80px;
 `;
 
-//Styling for the Log In button
-const LoginButton = styled.button`
-  text-decoration: none;
-  font-family: 'Assistant', sans-serif;
-  border-radius: 20px;
-  font-size: 20px;
-  margin: 3px;
-  color: black;
-  &:focus {
-    outline: none;
-  }
-`;
-
-
 class MainHeader extends Component {
   constructor(props) {
     super(props);
-
   }
 
   render() {

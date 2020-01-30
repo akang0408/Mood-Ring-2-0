@@ -4,6 +4,7 @@ body {
   background-size: cover;
   background-position: center center;
   text-align: center;
+  background-attachment: fixed;
 }
 
 a {
@@ -16,9 +17,10 @@ a {
   border-radius: 15px;
   color: rgb(208, 209, 236);
 }
-h1 {
+
+/* h1 {
   color: rgb(208, 209, 236);
-}
+} */
 
 .linksDiv {
   text-align: center;

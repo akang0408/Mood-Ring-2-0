@@ -12,21 +12,15 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import * as actions from '../../redux/actions.js';
 import MainHeader from './MainHeader.jsx'
-
-//Styling for the whole body
-const MainDiv = styled.div`
-  width: 100%;
-  height: 650px;
-  font-family: 'Assistant', sans-serif;
-  text-align: center;
-  margin-top: 10px;
-`;
+import { createGlobalStyle } from 'styled-components';
 
 //Styling for the daily quote
 const Quote = styled.h1`
   font-style: italic;
   font-family: 'Assistant', sans-serif;
   margin-top: 80px;
+  width: 60%;
+  // text-align: center;
 `;
 
 //Styling for the log in button
@@ -103,14 +97,14 @@ class LandingPageBody extends Component {
     );
 
     return (
-      <MainDiv>
+      <mainDivTwo>
         <TitleText key='titletext' onClick={this.gotToMain}>m☯☯d ring</TitleText>
         {quoteComp}
         <br></br>
         <LoginButton className="start-today" onClick={this.changePage}>
           start today
         </LoginButton>
-      </MainDiv>
+      </mainDivTwo>
     );
   }
 }

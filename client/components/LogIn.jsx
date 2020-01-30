@@ -10,20 +10,13 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import * as actions from '../../redux/actions.js';
 import MainHeader from './MainHeader.jsx'
-
-//The main body styling
-const MainDiv = styled.div`
-  text-align: center;
-  width: 80%;
-  height: 650px;
-  margin-top: 10px;
-  font-family: 'Assistant', sans-serif;
-`;
+import { createGlobalStyle } from 'styled-components';
 
 //The log in form styling
 const LogForm = styled.form`
   clear: both;
-  text-align: right;
+  // text-align: right;
+  text-align: center;
   width: 50%;
   height: 300px;
   margin: auto;
@@ -39,16 +32,6 @@ const SubmitButton = styled.button`
   font-size: 20px;
   &:focus {
     outline: none;
-  }
-`;
-
-const TitleText = styled.p`
-  text-align: center;
-  width: 100%;
-  margin: 2px;
-  font-family: 'Assistant', sans-serif;
-  font-weight: bold;
-  font-size: 80px;
 `;
 
 const WrongMessage = styled.p`
@@ -144,8 +127,7 @@ class LogIn extends Component {
       ];
     }
     return (
-      <MainDiv>
-        {/* <TitleText key='titletext' onClick={this.gotToMain}>m☯☯d ring</TitleText> */}
+      <mainDivOne>
         <LogForm>
           <div>
             <h1>Log In</h1>
@@ -169,7 +151,7 @@ class LogIn extends Component {
             {wrong}
           </div>
         </LogForm>
-      </MainDiv>
+      </mainDivOne>
     );
   }
 }
