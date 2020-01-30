@@ -86,7 +86,6 @@ class LogIn extends Component {
     this.onUserNameChange = this.onUserNameChange.bind(this);
     this.onPasswordChange = this.onPasswordChange.bind(this);
     this.onFormClick = this.onFormClick.bind(this);
-    this.changePage = this.changePage.bind(this);
     this.sendToSignUp = this.sendToSignUp.bind(this);
     
     this.state = {

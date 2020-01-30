@@ -3,10 +3,12 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../redux/actions.js';
 import MoodDisplay from './moodDisplay.jsx';
+import DisplayCalendar from './DisplayCalendar.jsx'
 
 const mapStateToProps = (reduxState) => {
     //used to bring in the pieces of state that the components on this page will use
     return {
+      currentUser: reduxState.currentUser,
       username: reduxState.username,
       moods: reduxState.moods
     };
@@ -49,7 +51,12 @@ class MoodContainer extends Component {
       }
       return (
         <div>
-            {moodArray}
+          <div>
+           {moodArray}
+          </div>
+          <div>
+            {/* <DisplayCalendar /> */}
+          </div>    
         </div>
       )
     }

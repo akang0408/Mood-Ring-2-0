@@ -69,6 +69,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     saveResponse: (response) => {
       dispatch(actions.saveResponse(response))
+    },
+    saveMoods: (moods) => {
+      dispatch(actions.saveMoods(moods))
     }
   }
 }
@@ -112,7 +115,7 @@ class Feeling extends Component {
     const value = document.getElementById('selector').value;
 
     const user = {
-      username: this.props.username,
+      username: this.props.currentUser,
       mood: value,
       date: newDate,
     };
@@ -136,6 +139,20 @@ class Feeling extends Component {
   }
   
   routeToCalendar() {
+  //   fetch('/getUserMoods', {
+  //     method: 'POST',
+  //     headers: {
+  //     'Content-Type': 'application/json'
+  //     },
+  //     body: JSON.stringify({ username: this.props.username }),
+  // })
+  //   .then(response => response.json())
+  //   .then(response => {
+  //     console.log('this is response', response)
+  //     this.props.saveMoods(response)
+  //   })
+  //   .catch(err => console.log(err))
+
     this.props.history.push('/calendar')
   }
 
