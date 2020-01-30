@@ -175,4 +175,24 @@ userController.getUserMoods = (req, res, next) => {
 };
 
 
+userController.insertUserMood = (req, res, next) => {
+    // middleware to insert a new entry into the customer moods table
+    // will get the user_id from res.locals, mood and date from the req. body
+
+    const { mood, date } = req.body;
+    const { user_id } = res.locals;
+
+    const upsertUserMoodString = 'INSERT INTO customer_moods (user_id, mood, created_date) VALUES ($1, $2, $3) ON CONFLICT (user_id, created_date) DO UPDATE SET mood=$2';
+
+    const upsertUserMoodValues = [user_id, mood, date];
+
+    db.query(upsertUserMoodString, upsertUserMoodValues)
+        .then(res => {
+            console.log('res hit here:', res);
+            return next();
+        })
+        .catch(err => next(err));
+
+}
+
 module.exports = userController;

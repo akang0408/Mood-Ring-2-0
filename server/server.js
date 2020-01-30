@@ -36,7 +36,7 @@ app.post('/getUserMoods', userController.getUserID, userController.getUserMoods,
     res.json(res.locals.userMoods);
 });
 
-app.post('/mood', userController.getMoodResponse, (req, res) => {
+app.post('/mood', userController.getUserID, userController.insertUserMood, userController.getMoodResponse, (req, res) => {
 
     res.status(200).send({ response: res.locals.moodresponse });
 });
