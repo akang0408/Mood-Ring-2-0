@@ -10,25 +10,7 @@ import { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import * as actions from '../../redux/actions.js';
-
-//The main body styling
-const MainDiv = styled.div`
-  text-align: center;
-  width: 80%;
-  height: 650px;
-  margin-top: 10px;
-  font-family: 'Assistant', sans-serif;
-`;
-
-//The sign up form styling
-const CreateForm = styled.form`
-  clear: both;
-  text-align: right;
-  width: 50%;
-  height: 300px;
-  margin: auto;
-  font-family: 'Assistant', sans-serif;
-`;
+import { createGlobalStyle } from 'styled-components';
 
 //Submit button styling
 const SubmitButton = styled.button`
@@ -40,6 +22,14 @@ font-size: 20px;
 &:focus {
   outline: none;
 }
+`;
+
+const MainDiv = styled.div`
+  text-align: center;
+  width: 100%;
+  height: 650px;
+  margin-top: 10px;
+  font-family: 'Assistant', sans-serif;
 `;
 
 const mapStateToProps = (reduxState) => {
@@ -102,12 +92,12 @@ class CreateUser extends Component {
 
       
     });
+  };
 
-  }
   render() {
     return (
-      <MainDiv>
-        <CreateForm>
+       <MainDiv>
+        <createForm>
           <div className="center-form">
             <h1>Sign up</h1>
             <label for="username">username: </label>
@@ -129,10 +119,10 @@ class CreateUser extends Component {
               Create Account
             </SubmitButton>
           </div>
-        </CreateForm>
-      </MainDiv>
+        </createForm>
+       </MainDiv>
     );
-  }
-}
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateUser);

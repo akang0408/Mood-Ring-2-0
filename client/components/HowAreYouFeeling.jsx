@@ -11,6 +11,7 @@ import { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import * as actions from '../../redux/actions.js';
+import { createGlobalStyle } from 'styled-components';
 
 
 //The main body styling
