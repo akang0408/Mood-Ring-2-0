@@ -32,7 +32,7 @@ app.post('/login', userController.login, (req, res) => {
     res.status(200).send(bcryptSuccess);
 });
 
-app.get('/getUserMoods', userController.getUserID, userController.getUserMoods, (req, res) => {
+app.post('/getUserMoods', userController.getUserID, userController.getUserMoods, (req, res) => {
     res.json(res.locals.userMoods);
 });
 
