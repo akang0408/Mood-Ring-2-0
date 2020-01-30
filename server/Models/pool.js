@@ -19,7 +19,9 @@ const pool = new Pool({
  * 
  * insert new mood/row into table
  * 
- *  "INSERT INTO customer_moods (user_id, mood) VALUES (91, 'frustrated')";
+ *  "INSERT INTO customer_moods (user_id, mood, created_date) VALUES (91, 'frustrated', '2020-01-10)";
+ * 
+ * created_date will be a string in format YYYY-MM-DD
  * 
  * should get values from the front end
  * 
