@@ -139,8 +139,6 @@ userController.getUserMoods = (req, res, next) => {
     })
     .catch((err) => next(err));
 };
-<<<<<<< HEAD
-
 
 userController.insertUserMood = (req, res, next) => {
     // middleware to insert a new entry into the customer moods table
@@ -163,6 +161,3 @@ userController.insertUserMood = (req, res, next) => {
 }
 
 module.exports = userController;
-=======
-module.exports = userController;
->>>>>>> dev
