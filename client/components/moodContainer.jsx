@@ -33,7 +33,7 @@ class MoodContainer extends Component {
         headers: {
         'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ username: this.props.username }),
+        body: JSON.stringify({ username: this.props.currentUser }),
     })
       .then(response => response.json())
       .then(response => {
@@ -45,6 +45,7 @@ class MoodContainer extends Component {
     render() {
       const moodArray = [];
       const moodz = this.props.moods
+      
       for (let i = 0; i < moodz.length; i += 1) {
         console.log(moodz[i].created_date)
         moodArray.push(<MoodDisplay date={moodz[i].created_date} mood={moodz[i].mood}></MoodDisplay>);
