@@ -80,32 +80,44 @@ class Feeling extends Component {
     this.routeToCalendar = this.routeToCalendar.bind(this);
   }
 
-  componentDidMount() {
-    const ourObj = { username: this.props.username }
-    fetch('/getUserMoods', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(ourObj)
-    })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log('thisisourDATA', data)
-    }).catch(err=>{
-      console.log('hitting error')
-      console.log(err)
-    });
-  }
+  // componentDidMount() {
+  //   const ourObj = { username: this.props.username }
+  //   fetch('/getUserMoods', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify(ourObj)
+  //   })
+  //   .then((response) => response.json())
+  //   .then((data) => {
+  //     console.log('thisisourDATA', data)
+  //   }).catch(err=>{
+  //     console.log('hitting error')
+  //     console.log(err)
+  //   });
+  // }
+
 
   sendMood() {
+
+    let dateObj = new Date();
+    let month = dateObj.getUTCMonth() + 1; 
+    let day = dateObj.getUTCDate();
+    let year = dateObj.getUTCFullYear();
+    let newDate = year + "-" + month + "-" + day;
+
+    console.log('this is date', newDate)
+
     const value = document.getElementById('selector').value;
 
     const user = {
       username: this.props.username,
-      mood: value
+      mood: value,
+      date: newDate,
     };
-
+    console.log('user', user)
+    
     fetch('/mood', {
       method: 'POST',
       headers: {

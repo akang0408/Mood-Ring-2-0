@@ -125,13 +125,10 @@ class LogIn extends Component {
           });
         } else {
           this.props.addUser();
-          this.props.changePage(2);
+          this.props.history.push('/feeling') 
         }
       });
-  }
-
-  changePage() {
-    this.props.history.push('/feeling')  
+       
   }
 
   sendToSignUp() {
@@ -168,7 +165,7 @@ class LogIn extends Component {
             <br></br>
             <br></br>
             <button onClick={this.sendToSignUp}>Create Account</button>
-            <SubmitButton onClick={this.changePage}>Submit</SubmitButton>
+            <SubmitButton onClick={this.onFormClick}>Submit</SubmitButton>
             {wrong}
           </div>
         </LogForm>
