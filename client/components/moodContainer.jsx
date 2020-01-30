@@ -44,6 +44,7 @@ class MoodContainer extends Component {
       const moodArray = [];
       const moodz = this.props.moods
       for (let i = 0; i < moodz.length; i += 1) {
+        console.log(moodz[i].created_date)
         moodArray.push(<MoodDisplay date={moodz[i].created_date} mood={moodz[i].mood}></MoodDisplay>);
       }
       return (
