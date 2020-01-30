@@ -113,7 +113,7 @@ class Feeling extends Component {
     const value = document.getElementById('selector').value;
 
     const user = {
-      username: this.props.username,
+      username: this.props.currentUser,
       mood: value,
       date: newDate,
     };
