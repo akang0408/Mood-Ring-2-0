@@ -8,6 +8,7 @@ const mapStateToProps = (reduxState) => {
     //used to bring in the pieces of state that the components on this page will use
     return {
       username: reduxState.username,
+      currentUser: reduxState.currentUser,
       moods: reduxState.moods
     };
 };
